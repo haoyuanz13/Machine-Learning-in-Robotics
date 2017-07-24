@@ -2,7 +2,9 @@
 Machine learning algorithms applied into real modern robot.
 
 The packaged includes several most popular used machine learning algorithm applied in the real robot, all algorithm 
-and models are trained based on the data obtained from real robot. Those algorithms are the fundamental structures for the visual SLAM project.
+and models are trained based on the data obtained from real robot. Those algorithms are the fundamental structures for the visual SLAM project. 
+
+All packages include reports so that for better algorithm clarification and result showing.
 
 # 1. Object Detection
 Detect interested objects in the image via GMM and GM model, also measure the physical information of the objects in the real world.
