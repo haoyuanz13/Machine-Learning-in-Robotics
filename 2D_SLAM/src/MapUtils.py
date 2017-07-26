@@ -1,4 +1,3 @@
-#Daniel D. Lee, Alex Kushleyev, Kelsey Saulnier, Nikolay Atanasov
 import numpy as np
 
 # INPUT 
