@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""
 
-Author: Heejin Chloe Jeong
+Author: Heejin Chloe Jeong, Haoyuan Zhang
 Affiliation: University of Pennsylvania
 Date: Feb 2017
 
