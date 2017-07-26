@@ -18,3 +18,6 @@ For solving Cart - pole issue, that's also a typical reinforcement learning prob
 
 Please run 'run_pgo_continuous.py' directly. You are supposed to see the cart - pole figure as well as iteration results.
 
+Results
+-------
+Optimization results and corresponding analysis are in the report, just feel free to take a look at that if necessary.
