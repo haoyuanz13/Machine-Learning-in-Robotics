@@ -1,5 +1,4 @@
-# ML_in_Robotics
-Machine learning algorithms applied into real modern robot.
+# Machine Learning algorithms applied in modern real robots
 
 The packaged includes several most popular used machine learning algorithm applied in the real robot, all algorithm 
 and models are trained based on the data obtained from real robot. Those algorithms are the fundamental structures for the visual SLAM project. 
