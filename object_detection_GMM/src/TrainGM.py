@@ -9,8 +9,8 @@ mean = np.sum(barrel, axis = 0) / float(size)
 # compute covariance matrix 
 corvar = np.zeros((3, 3))
 for i in range (size):
-	norm = barrel[i, :] - mean
-	corvar += np.outer(norm, norm)
+  norm = barrel[i, :] - mean
+  corvar += np.outer(norm, norm)
 corvar = corvar / float(size)
 
 # alternative computation
