@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt;
 import pylab as pl;
 import cv2;
 
-
 '''
 	sphere to cat
 '''
