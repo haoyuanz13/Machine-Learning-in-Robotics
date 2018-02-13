@@ -1,141 +1,159 @@
-# find longitude and latitude of each pixel in the image
-# convert (lambda, fi, 1) to Cartesian (built in function)
-# use estimate rotate quaternions to map position into world frame
-# project into cylinder
-import numpy as np
-from scipy import io
-import cv2
-import os
-import math
-import pylab as pl
-from matplotlib import pyplot as plt
-
-# normalize time line
-def time_norm(t_cam, t_rot):
-    t_cam = (t_cam[0] - t_cam[0, 0]).tolist()
-    t_rot = (t_rot[0] - t_rot[0, 0]).tolist()
-
-    total = len(t_cam)
-    length = len(t_rot)
-    rot_ind = [0]
-    for i in range(1, total):
-        pivot = t_cam[i]
-        pre = math.fabs(t_rot[-1] - pivot)
-        target = t_rot[-1]
-
-        for k in range(rot_ind[-1] + 1, length):
-            if math.fabs(t_rot[k] - pivot) >= pre:
-                break
-            else:
-                pre = math.fabs(t_rot[k] - pivot)
-                target = k
-
-        rot_ind.append(target)
-    return rot_ind
+import scipy;
+from scipy import io;
+import numpy as np;
+import pdb;
+import matplotlib.pyplot as plt;
+import pylab as pl;
+import cv2;
 
 
-# cart to sph coordinate
-def cart2sph(x, y, z):
-    azimuth = np.arctan2(y, x)
-    elevation = np.arctan2(z, np.sqrt(x ** 2 + y ** 2))
-    r = np.sqrt(x ** 2 + y ** 2 + z ** 2)
-    return azimuth, elevation, r
+'''
+	sphere to cat
+'''
+def sphere2Cat(azimuth, inclination, radius):
+	theta = inclination;
+	phi = azimuth;
+	r = radius;
+	x = r * np.cos(theta) * np.cos(phi);
+	y = r * np.cos(theta) * np.sin(phi);
+	z = r * np.sin(theta);
+	num = theta.shape[0];
+	pos = np.zeros((3, num));
+	pos[0, :] = x.reshape(1, num);
+	pos[1, :] = y.reshape(1, num);
+	pos[2, :] = z.reshape(1, num);
+	return x, y, z, pos;
 
 
-# sph to cart coordinate
-def sph2cart(azimuth, elevation, r):
-    x = r * np.cos(elevation) * np.cos(azimuth)
-    y = r * np.cos(elevation) * np.sin(azimuth)
-    z = r * np.sin(elevation)
-    return x, y, z
+'''
+	cat to sphere transformation
+'''
+def cat2Sphere(world_pos):
+	x = world_pos[0, :];
+	y = world_pos[1, :];
+	z = world_pos[2, :];
+	r = np.sqrt(np.square(x) + np.square(y), np.square(z));
+	theta = np.arctan2(z, r);
+	phi = np.arctan2(y, x);
+	azimuth = phi;
+	inclination = theta;
+	radius = r;
+	return azimuth, inclination, radius;
 
-
-# img to sph coordinate
-def pos_map(row, col):
-    # meshgrid map
-    nx, ny = (col, row)
-    x = np.linspace(0, col - 1, nx)
-    y = np.linspace(0, row - 1, ny)
-    xv, yv = np.meshgrid(x, y)
-
-    xv = xv.reshape(76800, 1)
-    yv = yv.reshape(76800, 1)
-
-    longti = (159 - xv) * (np.pi / 3 / 320)
-    lati = (119 - yv) * (np.pi / 4 / 240)
-
-    x, y, z = sph2cart(longti, lati, 1)
-    return x, y, z, yv, xv
-
-
-# rotation coordinate
-def map2world(rot, x, y, z):
-    x = x.reshape(-1, 76800)
-    y = y.reshape(-1, 76800)
-    z = z.reshape(-1, 76800)
-    pos = np.zeros((3, 76800))
-
-    pos[0, :] = x
-    pos[1, :] = y
-    pos[2, :] = z
-
-    world = np.dot(rot, pos)
-    return world[0, :], world[1, :], world[2, :]
-
-
-# stitch image
-def project(img, rot, rot_index):
-    x, y, z, yv, xv = pos_map(240, 320)
-
-    time = len(rot_index)
-    im_sti = np.zeros((960, 1920, 3)) # new panorama
-
-    for i in range(time):
-        im_i = img[:, :, :, i]
-        ind = rot_index[i]
-        rot_i = rot[ind]
-
-        X, Y, Z = map2world(rot_i, x, y, z)
-        az, ele, r = cart2sph(X, Y, Z)
-
-        theta = (az + np.pi) / (np.pi / 3 / 320)
-        height = 960 - (ele + (np.pi / 2)) / (np.pi / 4 / 240)
-
-        theta = np.floor(theta)
-        height = np.floor(height)
-
-        for k in range(76800):
-            new_x = theta[k]
-            new_y = height[k]
-            if new_x < 0 or new_y < 0:
-                continue
-            ori_x = xv[k, 0]
-            ori_y = yv[k, 0]
-
-            im_sti[new_y, new_x, :] = im_i[ori_y, ori_x, :]
-
-    return im_sti
-
-# main code
+'''
+	main image stitching part
+'''
 def main():
-    folder = "cam1"  # the folder stores all cam datas
-    for mat in os.listdir(folder):
-        cams = io.loadmat(os.path.join(folder, mat))
-        camm = cams["cam"]
-        ts_cam = cams["ts"]
+	ukf_mode = 0;
+	# load data
+	im = scipy.io.loadmat('./cam/cam8.mat');
+	imu = scipy.io.loadmat('./imu/imuRaw8.mat');
 
-        ts_imu = np.load("imu_ts.npy")[8].transpose()  # the file stores time information
-        est = np.load('vicon_rots.npy')[8]  # the file stores estimated rotations
+	# use ukf prediction
+	if ukf_mode == 0:
+		vicon = scipy.io.loadmat('./ukf_pred_rot/ukf_prediction8.mat');
+		rot = vicon['ukf'];
 
-        rot_index = time_norm(ts_cam, ts_imu)  # normalize time line
-        im_res = project(camm, est, rot_index) # stitch images
-        pl.imshow(im_res)
-        plt.show()
-main()
+	## use vicon
+	else:
+		vicon = scipy.io.loadmat('./vicon/viconRot2.mat');
+		rot = vicon['rots'];
+
+	cam = im['cam'];
+
+	# normalize and match the timeline
+	t_im = im['ts'];
+	t_rot = imu['ts']; # the time in corresponding vicon
+	im_num = t_im.shape[1];
+	vicon_num = t_rot.shape[1];
+	rot_selected = [];
+
+	vicon_time_idx = 0;
+	for i in range(im_num):
+		camera_time = t_im[0, i];
+		vicon_time = t_rot[0, vicon_time_idx];
+		
+		while(vicon_time < camera_time):
+			vicon_time_idx += 1;
+			
+			if(vicon_time_idx >= vicon_num):
+				vicon_time_idx = vicon_time_idx - 1;
+				vicon_time = t_rot[0, vicon_time_idx];
+				break;
+			
+			vicon_time = t_rot[0, vicon_time_idx];
+		
+		# after the while loop, we met the first vicon time > camera time
+		
+		rot_selected.append(vicon_time_idx);
+
+	# rotate image according rotation matrix;
+	row = 240;
+	col = 320;
+	pix = row * col;
+	x = np.linspace(0, col - 1, col, dtype = int); #col
+	y = np.linspace(0, row - 1, row, dtype = int); #row
+
+	xx, yy = np.meshgrid(x, y);
+	xx = xx.transpose().reshape(pix, 1);
+	yy = yy.transpose().reshape(pix, 1);
+
+	azimuth = (159 - xx) * (np.pi / 3 / col);
+	inclination = (119 - yy) * (np.pi / 4 / row);
+
+	x_cat, y_cat, z_cat, pos = sphere2Cat(azimuth, inclination, 1);
+	# pos = np.array([x_cat, y_cat, z_cat]);
+
+	# stitch image
+	time_step = im_num;
+	im_sti = np.zeros((960, 1920, 3));
+
+	# stitch each frame in the current image
+	for i in range(time_step):
+		print i;
+		im_cur = cam[:, :, :, i];
+		rot_idx = rot_selected[i];
+		
+		if ukf_mode == 0:
+			rot_cur = rot[rot_idx, :, :];
+			rot_num = rot.shape[0];
+		else:
+			rot_cur = rot[:, :, rot_idx];
+			rot_num = rot.shape[2];
+		if rot_idx >= rot_num:
+			break;		
+
+		world_pos = np.dot(rot_cur, pos);
+		azi, inc, r = cat2Sphere(world_pos)
+
+		theta = np.floor((azi + np.pi) / (np.pi / 3 / col));
+		height = np.floor(960 - (inc + (np.pi / 2)) / (np.pi / 4 / row));
+
+		# traverse each pixel
+		for j in range(pix):
+			new_x = int(theta[j]);
+			new_y = int(height[j]);
+			if new_x < 0 or new_y < 0:
+				continue;
+			ori_x = xx[j, :];
+			ori_y = yy[j, :];
+
+			im_sti[new_y, new_x, :] = im_cur[ori_y, ori_x, :]
+			im_sti[new_y, new_x, :].reshape(-1, 3);
+		
+		# print im_sti[new_y, new_x, :], im_cur[ori_y, ori_x, :];
+		# im_sti = np.array(im_sti, dtype=np.uint8)
+		# im_sti = cv2.cvtColor(im_sti, cv2.COLOR_BGR2RGB)
+		# cv2.imwrite('color_img1.jpg', im_sti)
+
+
+	im_sti = np.array(im_sti, dtype=np.uint8)
+	im_sti = cv2.cvtColor(im_sti, cv2.COLOR_BGR2RGB)
+	plt.imshow(im_sti);
+	cv2.imwrite('panaroma_stirch.jpg', im_sti)
+	plt.show();
 
 
 
-
-
-
-
+if __name__ == '__main__':
+	main();
