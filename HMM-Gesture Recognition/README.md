@@ -26,9 +26,11 @@ Execution
 
 
 
-Results
+Results and Report
 -------
 1. _hmm_trained_models_: contains all trained models as well as k-means clustered results.
 2. _hmm_test_res_: contains all test results figures to show the prediction type with corresponding confidence.
 
 Please feel free to execute the file _Classification.py_ to see more intuitive test results.
+
+In addition, you can check the report _GestureRecoHMM_report.pdf_ for more detailed explanantions.
