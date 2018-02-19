@@ -25,3 +25,7 @@ Reinforcement Learning
 
 Implemented policy gradient method to estiamte the optimal trajectory of robot within a certain environment with step rewards, also built 
 deep network using tensorflow to train and solve Cart-pole game problem.
+
+Gesture Recognition using HMM
+-----------------------------
+Using IMU sensor readings from gyroscopes and accelerometers to train a set of Hidden Markov Models and recognize different robot arm motion gestures. And finally should be able to classify unknown arm motions in real-time using algorithm.  
