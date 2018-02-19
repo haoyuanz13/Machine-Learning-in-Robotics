@@ -1,6 +1,8 @@
 # Gesture Recoginition using Hidden Markov Model (HMM)
 
-The package creates an algorithm based on the HMM to recognize different robot arm motion gestures. Finally, it can achieve the ability to classify unknown arm motions in real-time.
+The package creates an algorithm based on the HMM to recognize different robot arm motion gestures. Finally, it can achieve the ability to classify unknown arm motions in real-time.       
+
+The HMM algorithm refers to this tutorial paper: [A tutorial on Hidden Markov Models and Selected Applications in Speech Recognition](http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf).
 
 Data
 -----
