@@ -4,7 +4,18 @@ The package creates an algorithm based on the HMM to recognize different robot a
 
 Data
 -----
-All data are collected using IMU sensor reading from gyroscopes and accelerometers that describe the arm motions associated with the movements. The datasets were collected from a consumer mobile device so there is no need to consider bias or sensitivity issues. The data format as(**7d vector**): [ts, Ax, Ay, Az, Wx, Wy, Wz].
+All data are collected using IMU sensor reading from gyroscopes and accelerometers that describe the arm motions associated with the movements. The datasets were collected from a consumer mobile device so there is no need to consider bias or sensitivity issues. The data format as(**7d vector**): [ts, Ax, Ay, Az, Wx, Wy, Wz].      
+
+Below figure shows the six different motions(1.Wave; 2.Infinity; 3.Eight; 4.Circle; 5.Beat3; 6.Beat4)
+<div align=center>
+  <img width="500" height="250" src="./gesture_fig.png", alt="gesture"/>
+</div>
+
+Total three datasets in the package:     
+1. _train_: contains all training data.
+2. _test_single_: contains test dataset using single step motion for each gesture.
+3. _test_multiple_: contains test dataset using multiple steps motion for each gesture.
+
 
 Execution
 ---------
@@ -12,3 +23,12 @@ Execution
 2. _hmm.py_: the general HMM model.
 3. _Classification.py_: the test file.
 4. _utils.py_: helper functions including save, loading data and k-means.
+
+
+
+Results
+-------
+1. _hmm_trained_models_: contains all trained models as well as k-means clustered results.
+2. _hmm_test_res_: contains all test results figures to show the prediction type with corresponding confidence.
+
+Please feel free to execute the file _Classification.py_ to see more intuitive test results.
