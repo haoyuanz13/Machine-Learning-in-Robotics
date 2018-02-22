@@ -124,7 +124,9 @@ def main():
     # store result
     sio.savemat('result.mat', {'f_EA':res_filter})
 
-main()
+    
+if __name__ == "__main__":
+  main()
 
 
 
