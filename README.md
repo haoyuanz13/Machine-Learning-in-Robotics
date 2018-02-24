@@ -5,8 +5,8 @@ and models are trained based on the data obtained from real robot. Those algorit
 
 All packages include reports so that for better algorithm clarification and result showing.
 
-Object Detection
-----------------
+Object Detection and Estimation
+-------------------------------
 
 Detect interested objects in the image via GMM and GM model, also measure the physical information of the objects in the real world.
 
