@@ -38,12 +38,12 @@ Results and Report
   <img width="500" height="500" src="./hmm_test_res/training.png", alt="training results"/>
 </div>
 
-**_Test Results_**
+**_Test Results_** (_left_: single; _right_: multiple)
 <p >
 <align="left">
-   <img width="400" height="100" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+   <img width="450" height="110" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
 <align="right">   
-   <img width="400" height="100" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+   <img width="450" height="110" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
 </p>
 
 Please feel free to execute the file _Classification.py_ to see more intuitive test results.
