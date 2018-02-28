@@ -35,7 +35,7 @@ Results and Report
 
 _Training Results_
 <div align=center>
-  <img width="500" height="250" src="./hmm_test_res/training.png", alt="training results"/>
+  <img width="500" height="500" src="./hmm_test_res/training.png", alt="training results"/>
 </div>
 
 Please feel free to execute the file _Classification.py_ to see more intuitive test results.
