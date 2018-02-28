@@ -39,11 +39,10 @@ Results and Report
 </div>
 
 **_Test Results_**
-<div align=left>
-  <img width="500" height="250" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
-<div align=right>
-  <img width="500" height="250" src="./hmm_test_res/test_multiple.png", alt="test(multiple) results"/>
-</div>
+<p >
+   <img width="250" height="150" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+   <img width="250" height="150" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+</p>
 
 Please feel free to execute the file _Classification.py_ to see more intuitive test results.
 
