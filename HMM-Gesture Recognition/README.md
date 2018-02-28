@@ -40,8 +40,10 @@ Results and Report
 
 **_Test Results_**
 <p >
-   <img width="250" height="150" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
-   <img width="250" height="150" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+<align="left">
+   <img width="400" height="100" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+<align="right">   
+   <img width="400" height="100" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
 </p>
 
 Please feel free to execute the file _Classification.py_ to see more intuitive test results.
