@@ -33,9 +33,16 @@ Results and Report
 1. _hmm_trained_models_: contains all trained models as well as k-means clustered results.
 2. _hmm_test_res_: contains all test results figures to show the prediction type with corresponding confidence.
 
-_Training Results_
+**_Training Results_**
 <div align=center>
   <img width="500" height="500" src="./hmm_test_res/training.png", alt="training results"/>
+</div>
+
+**_Test Results_**
+<div align=left>
+  <img width="500" height="250" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+<div align=right>
+  <img width="500" height="250" src="./hmm_test_res/test_multiple.png", alt="test(multiple) results"/>
 </div>
 
 Please feel free to execute the file _Classification.py_ to see more intuitive test results.
