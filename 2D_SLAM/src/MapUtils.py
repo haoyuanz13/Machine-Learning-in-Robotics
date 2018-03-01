@@ -37,7 +37,7 @@ def mapCorrelation(im, x_im, y_im, vp, xs, ys):
 def getMapCellsFromRay(x0t, y0t, xis, yis):
   nPoints = np.size(xis)
   xyio = np.array([[], []])
-  for x1,y1  in zip(xis, yis):
+  for x1, y1  in zip(xis, yis):
     x0 = x0t
     y0 = y0t
     steep = (np.abs(y1 - y0) > np.abs(x1 - x0))
