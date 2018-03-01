@@ -4,7 +4,7 @@ Add the package to your catkin workspace, execute the 'SLAM.py' directly, you ar
 
 Due to the size of training data, it might be slow to show the moving. You can add some interval in order to see the significant mapping process.
 
-Locate at line 112, 'SLAM.py', follow below operation:
+Locate at line 112, 'SLAM.py', follow below operation:     
 change
 ~~~~
 for i in range(1, timeline): 
