@@ -24,23 +24,23 @@ class HMM(object):
     initialize transaction matrix T, observation matrix B and prior Pi
   '''
   def randomInit(self):
-    # self.T = np.random.uniform(0, 1, (self.numH, self.numH))
-    # self.T /= np.sum(self.T, axis = 0)
+    self.T = np.random.uniform(0, 1, (self.numH, self.numH))
+    self.T /= np.sum(self.T, axis = 0)
 
-    # self.B = np.random.uniform(0, 1, (self.numO, self.numH))
-    # self.B /= np.sum(self.B, axis = 0)
+    self.B = np.random.uniform(0, 1, (self.numO, self.numH))
+    self.B /= np.sum(self.B, axis = 0)
 
-    # self.Pi = np.random.uniform(0, 1, (1, self.numH))
-    # self.Pi /= np.sum(self.Pi)
+    self.Pi = np.random.uniform(0, 1, (1, self.numH))
+    self.Pi /= np.sum(self.Pi)
 
-    self.T = np.eye(self.numH) + np.eye(self.numH, k=-1)
-    self.T[0, -1] = 1.
-    self.T *= 0.5
+    # self.T = np.eye(self.numH) + np.eye(self.numH, k=-1)
+    # self.T[0, -1] = 1.
+    # self.T *= 0.5
 
-    self.B = np.ones((self.numO, self.numH)) / float(self.numO)
+    # self.B = np.ones((self.numO, self.numH)) / float(self.numO)
 
-    self.Pi = np.zeros((1, self.numH))
-    self.Pi[0, 0] = 1.
+    # self.Pi = np.zeros((1, self.numH))
+    # self.Pi[0, 0] = 1.
 
 
 
@@ -118,7 +118,7 @@ class HMM(object):
     cur_Pi = np.zeros([1, self.numH])
 
     log_p, alpha, ct, ct_raw = self.forward(obs) # estimate alpha
-    beta = self.backward(obs, ct_raw) # estimate beta
+    beta = self.backward(obs, ct) # estimate beta
 
     # E step to estimate gama and sigma
     for t in range(t_total):
