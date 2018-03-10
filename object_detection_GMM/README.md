@@ -9,8 +9,7 @@ The main GMM algorithm refers to this tutorial paper: [Mixture Model and EM](htt
 
 Data
 -----
-All training data are images that contain at least one red barrel, some of them may only include red barrel without any other confusing red color, and some may contain more than one similar red color. Examples show below:
-
+All training data are images that contain at least one red barrel, some of them may only include red barrel without any other confusing red color, and some may contain more than one similar red color. Examples are shown below:
 
 <p >
 <align="left">
@@ -20,20 +19,12 @@ All training data are images that contain at least one red barrel, some of them 
 <align="right">
   <img src = "./data/red_chair/2.6.png?raw=true" width="280" height="210">
 </p>
-  
-  
 
-Below figure shows the more intuitive camera frame model:     
-<div align=center>
-  <img width="600" height="300" src="./frame.png", alt="camera frame"/>
-</div>      
+Typically, for each train image, we manually crop and label red barrel data, as well as other interest color, and then store them as _.npy_ format. Total four dataset types in the package:     
+1. _red_barrel_: images used for training red color model from red barrel.
+2. _red_chair_: images used for training red color model from red chair.
+3. _other_red1/2_: images used for training red color model from other red objects.       
 
-Total three datasets in the package:     
-1. _imu_: contains all training data.
-2. _test_: contains all test data.
-3. _vicon_: contains ground truth data.        
-
-Moreover, feel free to check the documentation: **_IMU_reference.pdf_** for more detailed collected data information.     
 
 Execution
 ---------
