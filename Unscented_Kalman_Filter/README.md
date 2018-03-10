@@ -2,7 +2,7 @@
 
 This package implements a Kalman filter to track three dimensional orientation of a hand-handled camera. Finally, given the estimated pose and captured image frames, it can build a panorama in real time.         
 
-The main UKF algorithm refers to this paper: [A Quaternion-based Unscented Kalman Filter for Orientation Tracking (http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1257247).
+The main UKF algorithm refers to this paper: [A Quaternion-based Unscented Kalman Filter for Orientation Tracking] (http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1257247).
 
 
 
