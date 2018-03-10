@@ -68,18 +68,10 @@ Results and Report
 -------
 Feel free to check all trained/test results in the **_Report.pdf_**, below shows a simple demo result:
 
-**_3D Orientation Estimation_**
+**_Detection Result_**
 <div align=center>
-  <img width="560" height="420" src="./result/ori_est.jpg", alt="rpy"/>
+  <img width="560" height="420" src="./demo.png", alt="result"/>
 </div>
-
-**_Generated Panorama_** 
-<div align=center>
-   <img width="650" height="380" src="./result/panorama.jpg", alt="panorama"/>
-</div>
-
-**_Real-time Panorama Generating Video_**         
-The video is [here](https://drive.google.com/open?id=0B-YfsvV6PlJRaEtVb0pjTnNSaE0).
 
 
 
