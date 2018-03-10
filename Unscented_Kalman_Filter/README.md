@@ -48,9 +48,7 @@ All results are stored in the folder **_result_**, including:
 </div>
 
 **_Real-time Panorama Generating Video_** 
-<div align=center>
-   <img width="500" height="130" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
-</div>
+The video is [here](https://drive.google.com/open?id=0B-YfsvV6PlJRaEtVb0pjTnNSaE0).
 
 
 In addition, you can check the report _Report.pdf_ for more detailed explanantions.
