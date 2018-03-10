@@ -1,22 +1,16 @@
 # Orientation Estimation using Unscented Kalman Filter(UKF)
 
-This package implements a Kalman filter to track three dimensional orientation of a hand-handled camera. Finally, given the estimated pose and captured image frames, it can build a panorama in real time.         
+This package implements a Kalman filter to track three dimensional orientation of a hand-handled camera. Given IMU sensor readings from gyroscopes and accelerometers, the algorithm will estimate the underlying 3D orientation by learning the appropriate model parameters from ground truth data given by a Vicon motion capture system. Then it's able to generate a real-time panoramic image from camera images using the 3D orientation filter.       
 
 The main UKF algorithm refers to this paper: [A Quaternion-based Unscented Kalman Filter for Orientation Tracking](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1257247).
 
 
 
-Given IMU sensor readings from gyroscopes and accelerometers, you will estimate the underlying 3D             orientation by learning the appropriate model parameters from ground truth data given by a Vicon               motion capture system. You should then be able to generateareal-timepanoramicimagefromcamera                images using the 3D orientation filter.   
-
-The package creates an algorithm based on the HMM to recognize different robot arm motion gestures. Finally, it can achieve the ability to classify unknown arm motions in real-time.       
-
-
-
 Data
 -----
-All data are collected using IMU sensor reading from gyroscopes and accelerometers that describe the arm motions associated with the movements. The datasets were collected from a consumer mobile device so there is no need to consider bias or sensitivity issues. The data format as(**7d vector**): [ts, Ax, Ay, Az, Wx, Wy, Wz].      
+All data are collected using IMU sensor reading from gyroscopes and accelerometers that describe the arm motions associated with the movements. Those data are in raw version such that it's necessary to consider bias or sensitivity issues. The data format as(**6d vector**): [Ax, Ay, Az, Wz, Wx, Wy].      
 
-Below figure shows the six different motions(1.Wave; 2.Infinity; 3.Eight; 4.Circle; 5.Beat3; 6.Beat4)
+Below figure shows more intuitive camera frame model:     
 <div align=center>
   <img width="500" height="250" src="./gesture_fig.png", alt="gesture"/>
 </div>
