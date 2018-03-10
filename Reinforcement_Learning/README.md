@@ -27,7 +27,8 @@ Results
 -------
 All generated policies and training iterations are stored in the folder: **_results_**, and feel free to check the optimization results and corresponding analysis are in the **_Report.pdf_**.        
 
-The below series of figures show the policy converging process in the _4-by-4_ grid cell (Left -> Right: Initial State -> Final State).       
+The below series of figures show the policy converging process in the _4-by-4_ grid cell        
+(Left -> Right: Initial State -> Final State).       
 
 <p >
   <img src = "./results/vi1.png?raw=true" width="120" height="120">
