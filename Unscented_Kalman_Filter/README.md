@@ -12,7 +12,7 @@ All data are collected using IMU sensor reading from gyroscopes and acceleromete
 
 Below figure shows more intuitive camera frame model:     
 <div align=center>
-  <img width="500" height="250" src="./gesture_fig.png", alt="gesture"/>
+  <img width="600" height="300" src="./frame.png", alt="camera frame"/>
 </div>
 
 Total three datasets in the package:     
