@@ -70,7 +70,7 @@ Feel free to check all trained/test results in the **_Report.pdf_**, below shows
 
 **_Detection Result_**
 <div align=center>
-  <img width="560" height="420" src="./demo.png", alt="result"/>
+  <img width="800" height="420" src="./demo.png", alt="result"/>
 </div>
 
 
