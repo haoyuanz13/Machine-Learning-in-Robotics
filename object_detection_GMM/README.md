@@ -7,10 +7,9 @@ More specifically, given a set of training images, hand-label examples of differ
 The main GMM algorithm refers to this tutorial paper: [Mixture Model and EM](http://www.cse.psu.edu/~rtc12/CSE586Spring2010/papers/prmlMixturesEM.pdf).
 
 
-
 Data
 -----
-All data are collected using IMU sensor reading from gyroscopes and accelerometers that describe the arm motions associated with the movements. Those data are in raw version such that it's necessary to consider bias or sensitivity issues. The data format as(**6d vector**): [Ax, Ay, Az, Wz, Wx, Wy].      
+All training data are images that contain at least one red barrel,   
 
 Below figure shows the more intuitive camera frame model:     
 <div align=center>
