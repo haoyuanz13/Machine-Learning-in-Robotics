@@ -25,5 +25,17 @@ In order to solve the _Cart-Pole_ problem, which is also a typical reinforcement
 
 Results
 -------
+All generated policies and training iterations are stored in the folder: **_results_**, and feel free to check the optimization results and corresponding analysis are in the **_Report.pdf_**.        
 
-Optimization results and corresponding analysis are in the **_Report.pdf_**: 
+The below series of figures show the policy converging process in the _4-by-4_ grid cell.       
+
+<p >
+  <img src = "./results/vi1.png?raw=true" width="120" height="120">
+  <img src = "./results/vi2.png?raw=true" width="120" height="120">
+  <img src = "./results/vi3.png?raw=true" width="120" height="120">
+  <img src = "./results/vi4.png?raw=true" width="120" height="120">
+  <img src = "./results/vi5.png?raw=true" width="120" height="120">
+  <img src = "./results/vi6.png?raw=true" width="120" height="120">
+  <img src = "./results/vi7.png?raw=true" width="120" height="120">
+</p>
+
