@@ -50,7 +50,8 @@ Feel free to run the '_main_code.py_' directly for testing images. It's recommen
 For each test image, you are supposed to see a figure shown in the screen which contains total three plots:      
 1. The original image (color converted);
 2. All detected region candidates;
-3. Contours of red barrel.       
+3. Contours of red barrel.        
+
 Then once you close the figure, the terminal will show the number of detected red barrel, four corresponding corner positions and distance information. 
 
 
