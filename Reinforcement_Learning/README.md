@@ -17,11 +17,11 @@ In order to speed up the convergence process (8 by 8 grid case), please change b
 3. **horizaon:** 30.
 
 
+
 Policy Gradient Optimal 
 -----------------------
-For solving Cart - pole issue, that's also a typical reinforcement learning problem. 
+In order to solve the _Cart-Pole_ problem, which is also a typical reinforcement learning problem. Feel free to run **_run_pgo_continuous.py_** directly. You are supposed to see the Cart-Pole figure with iterative results.
 
-Please run 'run_pgo_continuous.py' directly. You are supposed to see the cart - pole figure as well as iteration results.
 
 Results
 -------
