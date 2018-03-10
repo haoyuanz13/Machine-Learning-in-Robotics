@@ -44,7 +44,7 @@ All results are stored in the folder **_result_**, including:
 
 **_Generated Panorama_** 
 <div align=center>
-   <img width="500" height="130" src="./result/panorama.jpg", alt="panorama"/>
+   <img width="650" height="380" src="./result/panorama.jpg", alt="panorama"/>
 </div>
 
 **_Real-time Panorama Generating Video_** 
