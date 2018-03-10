@@ -34,7 +34,15 @@ All training data are images that contain at least one red barrel, some of them 
 Typically, for each train image, we manually crop and label red barrel data, as well as other interest color, and then store them as _.npy_ format. Total four dataset types in the package:     
 1. _red_barrel_: images used for training red color model from red barrel.
 2. _red_chair_: images used for training red color model from red chair.
-3. _other_red1/2_: images used for training red color model from other red objects.       
+3. _other_red1/2_: images used for training red color model from other red objects.    
+
+
+Corresponding trained GMMs:
+1. _GMM_redBarrel_: model of red barrel.
+2. _GMM_redChair_: model of red chairs.
+3. _GMM_redOther1_: model of part of other red objects, including red robotics, red wall.
+4. _GMM_redOther2_: model of part of other red objects, including red ball and red bicycle.
+
 
 
 Execution
@@ -58,7 +66,7 @@ Then once you close the figure, the terminal will show the number of detected re
 
 Results and Report
 -------
-All results are stored in the folder **_result_**, including:
+Feel free to check all trained/test results in the **_Report.pdf_**, below shows a simple demo result:
 
 **_3D Orientation Estimation_**
 <div align=center>
@@ -72,23 +80,6 @@ All results are stored in the folder **_result_**, including:
 
 **_Real-time Panorama Generating Video_**         
 The video is [here](https://drive.google.com/open?id=0B-YfsvV6PlJRaEtVb0pjTnNSaE0).
-
-
-
-In addition, you can check the report **_Report.pdf_** for more detailed explanantions.
-
-Usage
------
-
-
-
-Trained models
---------------
-I trained total four GMMs in this project.
-'GMM_redBarrel': model of red barrel.
-'GMM_redChair': model of red chairs.
-'GMM_redOther1': model of part of other red objects, including red robotics, red wall.
-'GMM_redOther2': model of part of other red objects, including red ball and red bicycle.
 
 
 
