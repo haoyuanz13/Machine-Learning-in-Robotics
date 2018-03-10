@@ -56,5 +56,5 @@ In addition, below two plots are the training converging iterations, the left on
 
 **_Value Iteration Converging Process_**
 <div align=center>
-  <img width="150" height="450" src="./results/VI.png", alt="VI"/>
+  <img width="340" height="450" src="./results/VI.png", alt="VI"/>
 </div>     
