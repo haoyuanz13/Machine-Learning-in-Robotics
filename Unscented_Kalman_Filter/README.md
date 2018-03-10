@@ -47,7 +47,7 @@ All results are stored in the folder **_result_**, including:
    <img width="650" height="380" src="./result/panorama.jpg", alt="panorama"/>
 </div>
 
-**_Real-time Panorama Generating Video_** 
+**_Real-time Panorama Generating Video_**         
 The video is [here](https://drive.google.com/open?id=0B-YfsvV6PlJRaEtVb0pjTnNSaE0).
 
 
