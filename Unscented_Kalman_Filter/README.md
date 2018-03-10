@@ -39,12 +39,12 @@ All results are stored in the folder **_result_**, including:
 
 **_3D Orientation Estimation_**
 <div align=center>
-  <img width="560" height="420" src="./hmm_test_res/training.png", alt="training results"/>
+  <img width="560" height="420" src="./result/ori_est.jpg", alt="rpy"/>
 </div>
 
 **_Generated Panorama_** 
 <div align=center>
-   <img width="500" height="130" src="./hmm_test_res/test_single.png", alt="test(single) results"/>
+   <img width="500" height="130" src="./result/panorama.jpg", alt="panorama"/>
 </div>
 
 **_Real-time Panorama Generating Video_** 
