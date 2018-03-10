@@ -1,3 +1,62 @@
+# Object Detection (Red Barrel) using Gaussian Mixture Model
+
+In this package, it trains a probabilistic color model from image data, which will be used to segment and detect a target of interest (red barrel), and find the relative world coordinates of the target with respect to the camera frame.          
+
+More specifically, given a set of training images, hand-label examples of different colors first. Then from these training examples, build color classifiers for several colors (e.g., red, yellow, brown, etc.) and finally a red barrel detector. After detection, use own designed algorithm to obtain the bounding box of a detected barrel in the image frame and use the camera parameters to calculate the distance to the barrel on a set of new test images.        
+
+The main GMM algorithm refers to this tutorial paper: [Mixture Model and EM](http://www.cse.psu.edu/~rtc12/CSE586Spring2010/papers/prmlMixturesEM.pdf).
+
+
+
+Data
+-----
+All data are collected using IMU sensor reading from gyroscopes and accelerometers that describe the arm motions associated with the movements. Those data are in raw version such that it's necessary to consider bias or sensitivity issues. The data format as(**6d vector**): [Ax, Ay, Az, Wz, Wx, Wy].      
+
+Below figure shows the more intuitive camera frame model:     
+<div align=center>
+  <img width="600" height="300" src="./frame.png", alt="camera frame"/>
+</div>      
+
+Total three datasets in the package:     
+1. _imu_: contains all training data.
+2. _test_: contains all test data.
+3. _vicon_: contains ground truth data.        
+
+Moreover, feel free to check the documentation: **_IMU_reference.pdf_** for more detailed collected data information.     
+
+Execution
+---------
+1. _UKF.py_: the main training file to estimate the camera pose.
+2. _ADC.py_: works as dataloader and clean up raw data.
+3. _quaternions.py_: contains all basic operations of quaternions (including the average value estimation algorithm).
+4. _display.py_: plot helper function.
+5. _img_stitch.py_: generate panorama given camera pose information and images. (**Optional**: I also provide the matlab image stitching version, _'img_stitch.m'_, which is much faster).         
+
+
+For each test IMU data, you are supposed to see a figure display on the screen to show the filtered result in roll, pitch and yaw three dimension. Once you close the figure, it will work on the next coming test data in the target folder automatically. 
+
+
+Results and Report
+-------
+All results are stored in the folder **_result_**, including:
+
+**_3D Orientation Estimation_**
+<div align=center>
+  <img width="560" height="420" src="./result/ori_est.jpg", alt="rpy"/>
+</div>
+
+**_Generated Panorama_** 
+<div align=center>
+   <img width="650" height="380" src="./result/panorama.jpg", alt="panorama"/>
+</div>
+
+**_Real-time Panorama Generating Video_**         
+The video is [here](https://drive.google.com/open?id=0B-YfsvV6PlJRaEtVb0pjTnNSaE0).
+
+
+
+In addition, you can check the report **_Report.pdf_** for more detailed explanantions.
+
 Usage
 -----
 Execute the 'main_code' directly to those test images. It's better to arrange all test images in a folder and then modify the filename in 'main_code'.
