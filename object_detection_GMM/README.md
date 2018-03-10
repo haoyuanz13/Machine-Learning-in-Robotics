@@ -12,6 +12,17 @@ Data
 All training data are images that contain at least one red barrel, some of them may only include red barrel without any other confusing red color, and some may contain more than one similar red color. Examples show below:
 
 
+<p >
+<align="left">
+  <img src = "./data/red_barrel/2.14.png?raw=true" width="260" height="130">
+<align="center">
+  <img src = "./data/other_red1/2.8.png?raw=true" width="260" height="130">
+<align="right">
+  <img src = "./data/red_chair/2.6.png?raw=true" width="260" height="130">
+</p>
+  
+  
+
 Below figure shows the more intuitive camera frame model:     
 <div align=center>
   <img width="600" height="300" src="./frame.png", alt="camera frame"/>
