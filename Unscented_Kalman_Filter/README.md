@@ -20,7 +20,7 @@ Total three datasets in the package:
 2. _test_: contains all test data.
 3. _vicon_: contains ground truth data.        
 
-Moreover, feel free to check the documentation: _IMU_reference.pdf_ for more detailed collected data information.     
+Moreover, feel free to check the documentation: **_IMU_reference.pdf_** for more detailed collected data information.     
 
 Execution
 ---------
