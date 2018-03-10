@@ -46,3 +46,8 @@ The notations in the figure have corresponding meanings:
 4. **_H_**: the hole position (dangerous and penalty).         
 
 The **_red arrow_** in each cell represents the movement and show the optimal policty to reach the goal finally.
+
+Below shows the optimal policy obtained in the _8-by-8_ grid space:
+<div align=center>
+  <img width="600" height="600" src="./results/vi88.png", alt="policy"/>
+</div>     
