@@ -49,5 +49,7 @@ The **_red arrow_** in each cell represents the movement and show the optimal po
 
 Below shows the optimal policy obtained in the _8-by-8_ grid space:
 <div align=center>
-  <img width="600" height="600" src="./results/vi88.png", alt="policy"/>
+  <img width="450" height="450" src="./results/vi88.png", alt="policy"/>
 </div>     
+
+In addition, below two plots are the training converging iterations, the left one is obtained using _Value Iteration(VI)_ and right side one is from _Policy Iteration(PI)_.
