@@ -14,11 +14,11 @@ All training data are images that contain at least one red barrel, some of them 
 
 <p >
 <align="left">
-  <img src = "./data/red_barrel/2.14.png?raw=true" width="360" height="270">
+  <img src = "./data/red_barrel/2.14.png?raw=true" width="320" height="240">
 <align="center">
-  <img src = "./data/other_red1/2.8.png?raw=true" width="360" height="270">
+  <img src = "./data/other_red1/2.8.png?raw=true" width="320" height="240">
 <align="right">
-  <img src = "./data/red_chair/2.6.png?raw=true" width="360" height="270">
+  <img src = "./data/red_chair/2.6.png?raw=true" width="320" height="240">
 </p>
   
   
