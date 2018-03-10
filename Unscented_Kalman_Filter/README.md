@@ -13,15 +13,14 @@ All data are collected using IMU sensor reading from gyroscopes and acceleromete
 Below figure shows the more intuitive camera frame model:     
 <div align=center>
   <img width="600" height="300" src="./frame.png", alt="camera frame"/>
-</div>
-Moreover, feel free to check the documentation: **_IMU_reference.pdf_** for more detailed collected data information.        
-
+</div>      
 
 Total three datasets in the package:     
 1. _imu_: contains all training data.
 2. _test_: contains all test data.
-3. _vicon_: contains ground truth data.
+3. _vicon_: contains ground truth data.        
 
+Moreover, feel free to check the documentation: _IMU_reference.pdf_ for more detailed collected data information.     
 
 Execution
 ---------
