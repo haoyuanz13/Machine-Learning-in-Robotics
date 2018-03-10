@@ -20,7 +20,7 @@ Once the color regions are identified, we use shape statistics and other higher-
 
 Data
 -----
-All training data are images that contain at least one red barrel, some of them may only include red barrel without any other confusing red color, and some may contain more than one similar red color. Examples are shown below:
+All training data are images that contain at least one red barrel, some of them may only include red barrel without any other confusing red color, and some may contain more than one similar red color. Part of training examples are shown below:
 
 <p >
 <align="left">
@@ -39,14 +39,20 @@ Typically, for each train image, we manually crop and label red barrel data, as 
 
 Execution
 ---------
-1. _UKF.py_: the main training file to estimate the camera pose.
-2. _ADC.py_: works as dataloader and clean up raw data.
-3. _quaternions.py_: contains all basic operations of quaternions (including the average value estimation algorithm).
-4. _display.py_: plot helper function.
-5. _img_stitch.py_: generate panorama given camera pose information and images. (**Optional**: I also provide the matlab image stitching version, _'img_stitch.m'_, which is much faster).         
+1. _main_code.py_: the main algorithm to achieve object detection and distance estimation.
+2. _TrainGMM.py_: the algorithm to train GMM using EM.
+3. _TrainGM.py_: the algorithm to build GM.
+4. _Hand_label.py_: the algorithm to label ROI manually and store in _.npy_ format.
 
 
-For each test IMU data, you are supposed to see a figure display on the screen to show the filtered result in roll, pitch and yaw three dimension. Once you close the figure, it will work on the next coming test data in the target folder automatically. 
+Feel free to run the '_main_code.py_' directly for testing images. It's recommended to put all test images in the same directory and then change to the corresponding path name in '_main_code.py_'.        
+
+For each test image, you are supposed to see a figure shown in the screen which contains total three plots:      
+1. The original image (color converted);
+2. All detected region candidates;
+3. Contours of red barrel.       
+Then once you close the figure, the terminal will show the number of detected red barrel, four corresponding corner positions and distance information. 
+
 
 
 Results and Report
@@ -72,16 +78,8 @@ In addition, you can check the report **_Report.pdf_** for more detailed explana
 
 Usage
 -----
-Execute the 'main_code' directly to those test images. It's better to arrange all test images in a folder and then modify the filename in 'main_code'.
 
-For each test image, you are supposed to see a figure shown in the screen which contains total three images, the first one is the original image (color converted), the second one contains all detected region candidates, and the third one is the contour of red barrel. When you close the figure, the number of red barrel, four corner positions and distance information will print out. 
 
-Code files clarification 
-----------
-'main_code' is for testing images and find possible red barrel, it contains main part of this project, such as decision operator for each pixel and image processing.
-'TrainGMM' is the code of training GMM via EM, and I use GMM to construct all models. 
-'TrainGM' is for training GM.
-'Hand_label' is for labeling ROI manually and store data in certain file.
 
 Trained models
 --------------
