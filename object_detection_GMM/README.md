@@ -9,7 +9,8 @@ The main GMM algorithm refers to this tutorial paper: [Mixture Model and EM](htt
 
 Data
 -----
-All training data are images that contain at least one red barrel,   
+All training data are images that contain at least one red barrel, some of them may only include red barrel without any other confusing red color, and some may contain more than one similar red color. Examples show below:
+
 
 Below figure shows the more intuitive camera frame model:     
 <div align=center>
