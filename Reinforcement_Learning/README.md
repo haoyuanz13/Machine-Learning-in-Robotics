@@ -52,9 +52,14 @@ Below shows the optimal policy obtained in the _8-by-8_ grid space:
   <img width="450" height="450" src="./results/vi88.png", alt="policy"/>
 </div>     
 
-In addition, below two plots are the training converging iterations, the left one is obtained using _Value Iteration(VI)_ and right side one is from _Policy Iteration(PI)_.
+In addition, below two plots are the training converging iterations, using _Value Iteration(VI)_ and _Policy Iteration(PI)_ respectively.
 
 **_Value Iteration Converging Process_**
 <div align=center>
   <img width="340" height="450" src="./results/VI.png", alt="VI"/>
 </div>     
+
+**_Policy Iteration Converging Process_**
+<div align=center>
+  <img width="340" height="450" src="./results/PI.png", alt="PI"/>
+</div>   
