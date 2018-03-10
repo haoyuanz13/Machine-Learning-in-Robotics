@@ -11,8 +11,11 @@ Execution
 ---------
 Add the package to your catkin workspace as well as its dependenices. Then execute **_'run_FrozenLake.py'_** directly. In the main file, the default grid space is _4 by 4_, you can change to _8 by 8_ alternatively.         
 
-In order to speed up the convergence process (8 by 8 grid case), please change below arguments in the _'run_FrozenLake.py'_:
-**From line 114 to 122, set step size as 1000, iteration time as 500, and horizaon as 30**
+In order to speed up the convergence process (8 by 8 grid case), please change below arguments in the _'run_FrozenLake.py'_ (from line 114 to 122):        
+1. **step size: ** 1000.
+2. **iteration time: ** 500.
+3. **horizaon: ** 30.
+
 
 Policy Gradient Optimal 
 -----------------------
