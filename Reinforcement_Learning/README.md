@@ -25,4 +25,5 @@ In order to solve the _Cart-Pole_ problem, which is also a typical reinforcement
 
 Results
 -------
-Optimization results and corresponding analysis are in the report, just feel free to take a look at that if necessary.
+
+Optimization results and corresponding analysis are in the **_Report.pdf_**: 
