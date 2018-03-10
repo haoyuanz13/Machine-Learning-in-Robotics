@@ -39,3 +39,10 @@ The below series of figures show the policy converging process in the _4-by-4_ g
   <img src = "./results/vi7.png?raw=true" width="120" height="120">
 </p>
 
+The notations in the figure have corresponding meanings:
+1. **_S_**: the start position.
+2. **_G_**: the goal position (success and reward).
+3. **_F_**: the frozen position (safe and no penalty).
+4. **_H_**: the hole position (dangerous and penalty).         
+
+The **_red arrow_** in each cell represents the movement and show the optimal policty to reach the goal finally.
