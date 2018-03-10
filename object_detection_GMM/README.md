@@ -9,12 +9,12 @@ The main GMM algorithm refers to this tutorial paper: [Mixture Model and EM](htt
 
 Algorithm and Tips
 ------------------
-1. _Hand-label appropriate regions in the training images with discrete color labels_                   
+1. **_Hand-label appropriate regions in the training images with discrete color labels_**                   
 For this project, we will be especially interested in regions containing the red barrel (positive examples) and images containing similar colored-areas that are not a barrel (negative examples). If you are more ambitious, you could try to implement more automated ways of labeling images, e.g., by an unsupervised image segmentation, or an adaptive region flooding algorithm. Lighting invariance will be an issue, so you should think carefully about the best color space to use, and perhaps some low-level adaptation on the image.        
-2. _Use a learning algorithm to partition the color space into appropriate class color regions_           
+2. **_Use a learning algorithm to partition the color space into appropriate class color regions_**           
 In this project, we use Gaussain Mixture Model(GMM) to repersent each possible color region, but you are also free to try other machine learning approaches if you are interested in, e.g., decision trees, support vector machines, etc. You need to make your algorithm so that it is able to robustly generalize to new images. To prevent overfitting the training images, split them into training and validation sets. Train your algorithms using the training set and evaluate their performance on the validation set. This will allow you to compare different parameters for the probabilistic models and different color space representations.          
 
-3. _Geometric Estimation_           
+3. **_Geometric Distance Estimation_**           
 Once the color regions are identified, we use shape statistics and other higher-level features to decide where the barrel is located in the images. Use designed algorithms (e.g., camera model) to identify the coordinates of a bounding box for each detected barrel, which should compute an estimate of the distance to the barrel.        
 
 
