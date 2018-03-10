@@ -51,4 +51,5 @@ All results are stored in the folder **_result_**, including:
 The video is [here](https://drive.google.com/open?id=0B-YfsvV6PlJRaEtVb0pjTnNSaE0).
 
 
-In addition, you can check the report _Report.pdf_ for more detailed explanantions.
+
+In addition, you can check the report **_Report.pdf_** for more detailed explanantions.
