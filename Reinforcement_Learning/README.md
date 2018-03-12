@@ -1,7 +1,8 @@
 # Reinforcement Learning using Policy Gradient Methods          
 The package simulates a game case called _Frozen Lake Problem_:           
 
-Winter is here. You and your friends were tossing around a frisbee at the park when you made a wild throw that left the frisbee out in the middle of the lake. The water is mostly frozen, but there are a few holes where the ice has melted. If you step into one of those holes, you'll fall into the freezing water. At this time, there is an international frisbee shortage, so it is absolutely imperative that you navigate across the lake and retrieve the disc. However, the ice is slippery, so you won’t always move in the direction you intend...      
+Winter is here. You and your friends were tossing around a frisbee at the park when you made a wild throw that left the frisbee out in the middle of the lake. The water is mostly frozen, but there are a few holes where the ice has melted. If you step into one of those holes, you'll fall into the freezing water. At this time, there is an international frisbee shortage, so it is absolutely imperative that you navigate across the lake and retrieve the disc. However, the ice is slippery, so you won’t always move in the direction you intend...       
+
 This package will implement several methods for dealing with the Frozen Lake problem. The situation can be represented via a _Markov Decision Process(MDP)_ and a strategy for retrieving the frisbee can be obtained using **value iteration (VI)**, **policy iteration (PI)**, and **policy gradient optimization (PGO)**.      
 
 Moreover, once completed learning to retrieve the frisbee, feel free to use your PGO implementation as well as a more sophisticated proximal policy optimization to learn how to balance a pendulum or to play Atari games. 
