@@ -52,9 +52,9 @@ Four generated 2D maps are in the _result_ folder. For each map,
 3. _gray space_: un-scanned space.
 4. _blue curve_: the trajectory of robot.      
 
-Below shows one sample test results
+Below shows one sample test result map:
 <div align=center>
-  <img width="600" height="300" src="./result/train3.png", alt="slam"/>
+  <img width="700" height="350" src="./result/train3.png", alt="slam"/>
 </div>
 
 In addition, you can check the report _Report.pdf_ for more detailed explanantions.
