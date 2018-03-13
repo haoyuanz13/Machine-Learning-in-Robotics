@@ -50,6 +50,11 @@ Four generated 2D maps are in the _results_ folder. For each map,
 1. _white region_: explored empty space.
 2. _black edge lines_: explored occupied space (e.g. wall, chair, human).
 3. _gray space_: un-scanned space.
-4. _blue curve_: the trajectory of robot.
+4. _blue curve_: the trajectory of robot.      
+
+Below shows one sample test results
+<div align=center>
+  <img width="500" height="250" src="./results/train2.png", alt="slam"/>
+</div>
 
 In addition, you can check the report _Report.pdf_ for more detailed explanantions.
