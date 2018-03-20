@@ -33,7 +33,7 @@ Execution
 
 Add the package to your own workspace, execute the 'SLAM.py' directly, you are supposed tp see a figure on the screen which can show the mapping process. _However_, Due to the capacity of training data, it might take some time to show only one step update. Such that you can add some intervals to skip some frames, in order to see somehow significant mapping and localization process.
 
-Locate at line 112, 'SLAM.py', follow below operation:     
+Locate at line 112, **_'SLAM.py'_**, follow below operation:     
 change
 ~~~~
 for i in range(1, timeline): 
