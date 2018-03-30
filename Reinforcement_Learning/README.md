@@ -1,4 +1,7 @@
-# Reinforcement Learning using Policy Gradient Methods          
+# Reinforcement Learning using Policy Gradient Methods
+
+Introduction
+------------
 The package simulates a game case called _Frozen Lake Problem_:           
 
 Winter is here. You and your friends were tossing around a frisbee at the park when you made a wild throw that left the frisbee out in the middle of the lake. The water is mostly frozen, but there are a few holes where the ice has melted. If you step into one of those holes, you'll fall into the freezing water. At this time, there is an international frisbee shortage, so it is absolutely imperative that you navigate across the lake and retrieve the disc. However, the ice is slippery, so you won’t always move in the direction you intend...       
@@ -43,7 +46,7 @@ The below series of figures show the policy converging process in the _4-by-4_ g
 
 Therefore, the overall policy generation process shows like below:
 <div align=center>
-  <img width="450" height="450" src="./results/policy.gif", alt="policy gif"/>
+  <img width="300" height="300" src="./results/policy.gif", alt="policy gif"/>
 </div>     
 
 The notations in the figure have corresponding meanings:
