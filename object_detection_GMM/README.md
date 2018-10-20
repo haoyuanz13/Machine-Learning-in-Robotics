@@ -47,13 +47,13 @@ Corresponding trained GMMs:
 
 Execution
 ---------
-1. _main_code.py_: the main algorithm to achieve object detection and distance estimation.
-2. _TrainGMM.py_: the algorithm to train GMM using EM.
-3. _TrainGM.py_: the algorithm to build GM.
-4. _Hand_label.py_: the algorithm to label ROI manually and store in _.npy_ format.
+1. `main_code.py`: the main algorithm to achieve object detection and distance estimation.
+2. `TrainGMM.py`: the algorithm to train GMM using EM.
+3. `TrainGM.py`: the algorithm to build GM.
+4. `Hand_label.py`: the algorithm to label ROI manually and store in _.npy_ format.
 
 
-Feel free to run the '_main_code.py_' directly for testing images. It's recommended to put all test images in the same directory and then change to the corresponding path name in '_main_code.py_'.        
+Feel free to run the `_main_code.py_` directly for testing images. It's recommended to put all test images in the same directory and then change to the corresponding path name in `_main_code.py_`.        
 
 For each test image, you are supposed to see a figure shown in the screen which contains total three plots:      
 1. The original image (color converted);
